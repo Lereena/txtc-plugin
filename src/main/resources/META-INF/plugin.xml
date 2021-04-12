@@ -16,4 +16,9 @@
         <listener class="com.github.lereena.txtcplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="TXTC" implementationClass="com.github.lereena.txtcplugin.TXTCFileType"
+                  fieldName="INSTANCE" language="TXTC" extensions="txtc"/>
+    </extensions>
 </idea-plugin>
