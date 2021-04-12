@@ -1,6 +1,6 @@
-package org.jetbrains.plugins.template.services
+package com.github.lereena.txtcplugin.services
 
-import org.jetbrains.plugins.template.MyBundle
+import com.github.lereena.txtcplugin.MyBundle
 
 class MyApplicationService {
 
