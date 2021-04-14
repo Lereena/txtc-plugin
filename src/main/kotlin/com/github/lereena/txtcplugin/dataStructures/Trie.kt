@@ -9,7 +9,7 @@ class TrieNode(var key: Char?, var parent: TrieNode?) {
     var isTerminating = false
 }
 
-class Trie() {
+class Trie {
 
     private val root = TrieNode(key = null, parent = null)
 

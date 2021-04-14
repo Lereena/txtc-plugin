@@ -4,20 +4,20 @@ import com.github.lereena.txtcplugin.language.TXTCFileType
 import com.github.lereena.txtcplugin.language.TXTCLanguage
 import com.github.lereena.txtcplugin.language.TXTCTokenTypes
 import com.intellij.openapi.fileTypes.FileType
-import com.intellij.psi.*
+import com.intellij.psi.FileViewProvider
+import com.intellij.psi.PsiElementVisitor
+import com.intellij.psi.PsiReference
 import com.intellij.psi.impl.source.PsiFileImpl
 import com.intellij.psi.impl.source.resolve.reference.ReferenceProvidersRegistry
 
 class PsiTXTCFileImpl(viewProvider: FileViewProvider) : PsiFileImpl(
     TXTCTokenTypes.TXTC_FILE,
-    TXTCTokenTypes.TXTC_FILE, viewProvider), PsiTXTCFile {
+    TXTCTokenTypes.TXTC_FILE, viewProvider
+), PsiTXTCFile {
     private var myFileType: FileType? = null
 
     init {
-        myFileType =
-            if (viewProvider.baseLanguage !== TXTCLanguage)
-                TXTCFileType
-            else viewProvider.fileType
+        myFileType = if (viewProvider.baseLanguage !== TXTCLanguage) TXTCFileType else viewProvider.fileType
     }
 
     override fun accept(visitor: PsiElementVisitor) {

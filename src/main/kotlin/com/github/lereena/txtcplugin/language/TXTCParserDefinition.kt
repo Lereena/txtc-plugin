@@ -53,6 +53,4 @@ class TXTCParserDefinition : ParserDefinition {
     override fun createFile(viewProvider: FileViewProvider): PsiFile {
         return PsiTXTCFileImpl(viewProvider)
     }
-
-
 }
