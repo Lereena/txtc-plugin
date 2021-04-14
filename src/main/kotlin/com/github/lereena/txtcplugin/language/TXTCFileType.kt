@@ -1,4 +1,4 @@
-package com.github.lereena.txtcplugin
+package com.github.lereena.txtcplugin.language
 
 import com.intellij.openapi.fileTypes.LanguageFileType
 

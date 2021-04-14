@@ -18,7 +18,15 @@
     </applicationListeners>
 
     <extensions defaultExtensionNs="com.intellij">
-        <fileType name="TXTC" implementationClass="com.github.lereena.txtcplugin.TXTCFileType"
+        <fileType name="TXTC" implementationClass="com.github.lereena.txtcplugin.language.TXTCFileType"
                   fieldName="INSTANCE" language="TXTC" extensions="txtc"/>
+
+        <lang.parserDefinition language="TXTC"
+                               implementationClass="com.github.lereena.txtcplugin.language.TXTCParserDefinition"/>
+
+        <preloadingActivity implementation="com.github.lereena.txtcplugin.language.completion.CompletionSourceLoader"/>
+
+        <completion.contributor language="TXTC"
+                                implementationClass="com.github.lereena.txtcplugin.language.completion.TXTCCompletionContributor"/>
     </extensions>
 </idea-plugin>
