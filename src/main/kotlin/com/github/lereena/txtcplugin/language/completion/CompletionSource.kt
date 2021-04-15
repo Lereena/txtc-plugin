@@ -7,12 +7,12 @@ object CompletionSource {
     private val frequencies = HashMap<String, Long>()
 
     fun load(path: String) {
-        val text = javaClass.getResource(path).readText().split('\n')
+        val text = javaClass.getResource(path).readText().split('\n').filter { s -> s.isNotBlank() }
         text.forEach {
             val splitLine = it.split('\t', ' ').filter { s -> s.isNotBlank() }
             val word = splitLine[0].trim()
             trie.insert(word)
-            frequencies[word] = splitLine[1].toLong()
+            frequencies[word] = splitLine[1].trim().toLong()
         }
     }
 
