@@ -11,6 +11,8 @@ Intellij Platform plugin for .txtc files. Provides autocomplete of English words
 
 <!-- Plugin description end -->
 
+![demo](demo.gif)
+
 ## Installation
 
 - Using IDE built-in plugin system:
