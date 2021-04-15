@@ -17,6 +17,7 @@ class TXTCCompletionProvider : CompletionProvider<CompletionParameters>() {
 
         if (prefix.isEmpty()) return
 
+        result.restartCompletionOnAnyPrefixChange()
         val sorter = CompletionSorter.emptySorter().weigh(TXTCCompletionWeigher).weighBefore("liftShorter")
 
         for (word in CompletionSource.getCompletions(prefix)) {
